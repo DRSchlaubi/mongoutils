@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>me.schlaubi.mongoutils.cache - mongoutils</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">mongoutils</a>&nbsp;/&nbsp;<a href="./index.html">me.schlaubi.mongoutils.cache</a><br/>
+<br/>
+<h2>Package me.schlaubi.mongoutils.cache</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-cache/index.html">Cache</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Cache</span><span class="symbol">&lt;</span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cacheable-mongo-entity/index.html"><span class="identifier">CacheableMongoEntity</span></a><span class="symbol">&lt;</span><a href="-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">,</span>&nbsp;<a href="-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><span class="identifier">Iterable</span></a><span class="symbol">&lt;</span><a href="-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Closeable</span></code>
+<p>Key-value cache that stores every entity that was put into it.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-cacheable-mongo-entity/index.html">CacheableMongoEntity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">CacheableMongoEntity</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cacheable-mongo-entity/index.html"><span class="identifier">CacheableMongoEntity</span></a><span class="symbol">&lt;</span><a href="-cacheable-mongo-entity/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../me.schlaubi.mongoutils/-mongo-entity/index.html"><span class="identifier">MongoEntity</span></a><span class="symbol">&lt;</span><a href="-cacheable-mongo-entity/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-loading-cache/index.html">LoadingCache</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LoadingCache</span><span class="symbol">&lt;</span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cacheable-mongo-entity/index.html"><span class="identifier">CacheableMongoEntity</span></a><span class="symbol">&lt;</span><a href="-loading-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cache/index.html"><span class="identifier">Cache</span></a><span class="symbol">&lt;</span><a href="-loading-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">,</span>&nbsp;<a href="-loading-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span></code>
+<p>Cache which does automatically fetch entites that are not cached yet.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-loading-snowflake-cache.html">LoadingSnowflakeCache</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LoadingSnowflakeCache</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../me.schlaubi.mongoutils.defaults/-snowflake-mongo-entity/index.html"><span class="identifier">SnowflakeMongoEntity</span></a><span class="symbol">&lt;</span><a href="-loading-snowflake-cache.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-snowflake-cache/index.html"><span class="identifier">SnowflakeCache</span></a><span class="symbol">&lt;</span><a href="-loading-snowflake-cache.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-loading-cache/index.html"><span class="identifier">LoadingCache</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">,</span>&nbsp;<a href="-loading-snowflake-cache.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span></code>
+<p>Modification of <a href="-loading-cache/index.html">LoadingCache</a> with some extra helpers for <a href="../me.schlaubi.mongoutils.defaults/-snowflake-mongo-entity/index.html">SnowflakeMongoEntity</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-snowflake-cache/index.html">SnowflakeCache</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SnowflakeCache</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../me.schlaubi.mongoutils.defaults/-snowflake-mongo-entity/index.html"><span class="identifier">SnowflakeMongoEntity</span></a><span class="symbol">&lt;</span><a href="-snowflake-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cache/index.html"><span class="identifier">Cache</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">,</span>&nbsp;<a href="-snowflake-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span></code>
+<p>Modification of <a href="-cache/index.html">Cache</a> with some extra helpers for <a href="../me.schlaubi.mongoutils.defaults/-snowflake-mongo-entity/index.html">SnowflakeMongoEntity</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

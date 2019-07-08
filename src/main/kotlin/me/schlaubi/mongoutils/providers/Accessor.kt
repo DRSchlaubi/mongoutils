@@ -19,7 +19,7 @@ import java.util.function.Consumer
  * @since 1.0
  */
 @Suppress("unused", "MemberVisibilityCanBePrivate")
-interface Accessor<T : MongoEntity<T>, K> : Iterable<T> {
+interface Accessor<T : MongoEntity<T>, K : Any> : Iterable<T> {
 
     /**
      * The [MongoCollection] containing the entites.

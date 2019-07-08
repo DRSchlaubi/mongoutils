@@ -4,6 +4,7 @@ import com.mongodb.client.MongoClient
 import me.schlaubi.mongoutils.MongoEntity
 import me.schlaubi.mongoutils.MongoUtils
 import me.schlaubi.mongoutils.annotations.Collection
+import me.schlaubi.mongoutils.providers.Accessor
 import me.schlaubi.mongoutils.providers.MapperAccessor
 import org.bson.codecs.configuration.CodecRegistries
 import org.bson.codecs.configuration.CodecRegistry
@@ -25,27 +26,27 @@ internal class MongoUtilsImpl(
     private val models = mutableMapOf<Class<*>, ClassModel<*>>()
     private val mappers = mutableMapOf<Class<*>, Mapper<*>>()
 
-    override fun <T : MongoEntity<T>, K> createAccessor(
+    override fun <T : MongoEntity<T>, K : Any> createAccessor(
         clazz: KClass<T>
-    ) = MapperAccessor<T, K>(buildMapper(clazz))
+    ): Accessor<T, K> = MapperAccessor(buildMapper(clazz))
 
-    override fun <T : MongoEntity<T>, K> createAccessor(
+    override fun <T : MongoEntity<T>, K : Any> createAccessor(
         clazz: KClass<T>,
         codecRegistry: CodecRegistry
-    ) = MapperAccessor<T, K>(buildMapper(clazz, codecRegistry))
+    ): Accessor<T, K> = MapperAccessor(buildMapper(clazz, codecRegistry))
 
-    override fun <T : MongoEntity<T>, K> createAccessor(
+    override fun <T : MongoEntity<T>, K : Any> createAccessor(
         clazz: KClass<T>,
         codecRegistry: CodecRegistry,
         pojoConventions: List<Convention>?
-    ) = MapperAccessor<T, K>(buildMapper(clazz, codecRegistry, pojoConventions))
+    ): Accessor<T, K> = MapperAccessor(buildMapper(clazz, codecRegistry, pojoConventions))
 
-    override fun <T : MongoEntity<T>, K> createAccessor(
+    override fun <T : MongoEntity<T>, K : Any> createAccessor(
         clazz: KClass<T>,
         codecRegistry: CodecRegistry,
         pojoConventions: List<Convention>?,
         executorService: ExecutorService
-    ) = MapperAccessor<T, K>(buildMapper(clazz, codecRegistry, pojoConventions, executorService))
+    ): Accessor<T, K> = MapperAccessor(buildMapper(clazz, codecRegistry, pojoConventions, executorService))
 
     private fun <T : MongoEntity<T>> buildMapper(clazz: KClass<T>) = buildMapper(clazz, codecRegistry)
 

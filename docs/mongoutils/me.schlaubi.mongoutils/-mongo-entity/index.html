@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MongoEntity - mongoutils</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mongoutils</a>&nbsp;/&nbsp;<a href="../index.html">me.schlaubi.mongoutils</a>&nbsp;/&nbsp;<a href="./index.html">MongoEntity</a><br/>
+<br/>
+<h1>MongoEntity</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">MongoEntity</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">MongoEntity</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Class which represents an entity saved oin a <a href="#">com.mongodb.client.MongoCollection</a>.
+<strong>Important:</strong> Entity classes must be annotated with <a href="../../me.schlaubi.mongoutils.annotations/-collection/index.html">me.schlaubi.mongoutils.annotations.Collection</a></p>
+<p>Example usage:</p>
+<pre><code class="lang-Java">@Collection(name = "Users", database = "test")
+public class User extends MongoEntity&lt;User&gt; {
+ // POJO object
+}```
+
+@property T the type of the entity
+
+@see me.schlaubi.mongoutils.annotations.Collection
+
+@author Michael Rittmeister
+@since 1.0</code></pre>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MongoEntity</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Class which represents an entity saved oin a <a href="#">com.mongodb.client.MongoCollection</a>.
+<strong>Important:</strong> Entity classes must be annotated with <a href="../../me.schlaubi.mongoutils.annotations/-collection/index.html">me.schlaubi.mongoutils.annotations.Collection</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="mapper.html">mapper</a></p>
+</td>
+<td>
+<code><span class="keyword">lateinit</span> <span class="keyword">var </span><span class="identifier">mapper</span><span class="symbol">: </span><a href="../../me.schlaubi.mongoutils.internal/-mapper/index.html"><span class="identifier">Mapper</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="delete.html">delete</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeleteResult</span></code>
+<p>Deletes the entity from the database.
+<strong>Warning:</strong> This method blocks the current thread until the process is done</p>
+<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$delete(com.mongodb.client.model.DeleteOptions)/deleteOptions">deleteOptions</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeleteOptions</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeleteResult</span></code>
+<p>Deletes the entity from the database with <a href="delete.html#me.schlaubi.mongoutils.MongoEntity$delete(com.mongodb.client.model.DeleteOptions)/deleteOptions">deleteOptions</a>.
+<strong>Warning:</strong> This method blocks the current thread until the process is done</p>
+<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$delete(com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeleteResult</span></code>
+<p>Deletes the entity from the database on <a href="delete.html#me.schlaubi.mongoutils.MongoEntity$delete(com.mongodb.client.ClientSession)/clientSession">clientSession</a>.
+<strong>Warning:</strong> This method blocks the current thread until the process is done</p>
+<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$delete(com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/deleteOptions">deleteOptions</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeleteOptions</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$delete(com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeleteResult</span></code>
+<p>Deletes the entity from the database with <a href="delete.html#me.schlaubi.mongoutils.MongoEntity$delete(com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/deleteOptions">deleteOptions</a> on <a href="delete.html#me.schlaubi.mongoutils.MongoEntity$delete(com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/clientSession">clientSession</a>.
+<strong>Warning:</strong> This method blocks the current thread until the process is done</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="delete-async.html">deleteAsync</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deleteAsync</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">DeleteResult</span><span class="symbol">&gt;</span></code>
+<p>Deletes the entity from the database.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">deleteAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$deleteAsync(com.mongodb.client.model.DeleteOptions)/deleteOptions">deleteOptions</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeleteOptions</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">DeleteResult</span><span class="symbol">&gt;</span></code>
+<p>Deletes the entity from the database with <a href="delete-async.html#me.schlaubi.mongoutils.MongoEntity$deleteAsync(com.mongodb.client.model.DeleteOptions)/deleteOptions">deleteOptions</a>.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">deleteAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$deleteAsync(com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">DeleteResult</span><span class="symbol">&gt;</span></code>
+<p>Deletes the entity from the database on <a href="delete-async.html#me.schlaubi.mongoutils.MongoEntity$deleteAsync(com.mongodb.client.ClientSession)/clientSession">clientSession</a>.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">deleteAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$deleteAsync(com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/deleteOptions">deleteOptions</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeleteOptions</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$deleteAsync(com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">DeleteResult</span><span class="symbol">&gt;</span></code>
+<p>Deletes the entity from the database with <a href="delete-async.html#me.schlaubi.mongoutils.MongoEntity$deleteAsync(com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/deleteOptions">deleteOptions</a> on <a href="delete-async.html#me.schlaubi.mongoutils.MongoEntity$deleteAsync(com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/clientSession">clientSession</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="insert.html">insert</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">insert</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)))/mapper">mapper</span><span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils.internal/-mapper/index.html"><span class="identifier">Mapper</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Inserts an entity to the collection using the <a href="insert.html#me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)))/mapper">mapper</a>.
+<a href="../../me.schlaubi.mongoutils.providers/-accessor/index.html">me.schlaubi.mongoutils.providers.Accessor</a> should be used instead.</p>
+<code><span class="keyword">fun </span><span class="identifier">insert</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions)/mapper">mapper</span><span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils.internal/-mapper/index.html"><span class="identifier">Mapper</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions)/insertOptions">insertOptions</span><span class="symbol">:</span>&nbsp;<span class="identifier">InsertOneOptions</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Inserts an entity to the collection using the <a href="insert.html#me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions)/mapper">mapper</a> and the <a href="insert.html#me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions)/insertOptions">insertOptions</a>.
+<a href="../../me.schlaubi.mongoutils.providers/-accessor/index.html">me.schlaubi.mongoutils.providers.Accessor</a> should be used instead.</p>
+<code><span class="keyword">fun </span><span class="identifier">insert</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.ClientSession)/mapper">mapper</span><span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils.internal/-mapper/index.html"><span class="identifier">Mapper</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Inserts an entity to the collection using the <a href="insert.html#me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.ClientSession)/mapper">mapper</a> on the specified <a href="insert.html#me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.ClientSession)/clientSession">clientSession</a>.
+<a href="../../me.schlaubi.mongoutils.providers/-accessor/index.html">me.schlaubi.mongoutils.providers.Accessor</a> should be used instead.</p>
+<code><span class="keyword">fun </span><span class="identifier">insert</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/mapper">mapper</span><span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils.internal/-mapper/index.html"><span class="identifier">Mapper</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/insertOptions">insertOptions</span><span class="symbol">:</span>&nbsp;<span class="identifier">InsertOneOptions</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Inserts an entity to the collection using the <a href="insert.html#me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/mapper">mapper</a> and the <a href="insert.html#me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/insertOptions">insertOptions</a> on the specified <a href="insert.html#me.schlaubi.mongoutils.MongoEntity$insert(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/clientSession">clientSession</a>.
+<a href="../../me.schlaubi.mongoutils.providers/-accessor/index.html">me.schlaubi.mongoutils.providers.Accessor</a> should be used instead.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="insert-async.html">insertAsync</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">insertAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)))/mapper">mapper</span><span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils.internal/-mapper/index.html"><span class="identifier">Mapper</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Inserts an entity to the collection using the <a href="insert-async.html#me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)))/mapper">mapper</a>.
+<a href="../../me.schlaubi.mongoutils.providers/-accessor/index.html">me.schlaubi.mongoutils.providers.Accessor</a> should be used instead.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">insertAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions)/mapper">mapper</span><span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils.internal/-mapper/index.html"><span class="identifier">Mapper</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions)/insertOptions">insertOptions</span><span class="symbol">:</span>&nbsp;<span class="identifier">InsertOneOptions</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Inserts an entity to the collection using the <a href="insert-async.html#me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions)/mapper">mapper</a> and the <a href="insert-async.html#me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions)/insertOptions">insertOptions</a>.
+<a href="../../me.schlaubi.mongoutils.providers/-accessor/index.html">me.schlaubi.mongoutils.providers.Accessor</a> should be used instead.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">insertAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/mapper">mapper</span><span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils.internal/-mapper/index.html"><span class="identifier">Mapper</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/insertOptions">insertOptions</span><span class="symbol">:</span>&nbsp;<span class="identifier">InsertOneOptions</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Inserts an entity to the collection using the <a href="insert-async.html#me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/mapper">mapper</a> and the <a href="insert-async.html#me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/insertOptions">insertOptions</a> on the specified <a href="insert-async.html#me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/clientSession">clientSession</a>.
+<a href="../../me.schlaubi.mongoutils.providers/-accessor/index.html">me.schlaubi.mongoutils.providers.Accessor</a> should be used instead.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">insertAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.ClientSession)/mapper">mapper</span><span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils.internal/-mapper/index.html"><span class="identifier">Mapper</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Inserts an entity to the collection using the <a href="insert-async.html#me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.ClientSession)/mapper">mapper</a> on the specified <a href="insert-async.html#me.schlaubi.mongoutils.MongoEntity$insertAsync(me.schlaubi.mongoutils.internal.Mapper((me.schlaubi.mongoutils.MongoEntity.T)), com.mongodb.client.ClientSession)/clientSession">clientSession</a>.
+<a href="../../me.schlaubi.mongoutils.providers/-accessor/index.html">me.schlaubi.mongoutils.providers.Accessor</a> should be used instead.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="update.html">update</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">UpdateResult</span></code>
+<p>Updates the entity in the database after it got modified.</p>
+<code><span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$update(com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">UpdateResult</span></code>
+<p>Updates the entity in the database after it got modified on the <a href="update.html#me.schlaubi.mongoutils.MongoEntity$update(com.mongodb.client.ClientSession)/clientSession">clientSession</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="update-async.html">updateAsync</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">updateAsync</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">UpdateResult</span><span class="symbol">&gt;</span></code>
+<p>Updates the entity in the database after it got modified.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">updateAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoEntity$updateAsync(com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">UpdateResult</span><span class="symbol">&gt;</span></code>
+<p>Updates the entity in the database after it got modified on the <a href="update-async.html#me.schlaubi.mongoutils.MongoEntity$updateAsync(com.mongodb.client.ClientSession)/clientSession">clientSession</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../me.schlaubi.mongoutils.cache/-cacheable-mongo-entity/index.html">CacheableMongoEntity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">CacheableMongoEntity</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils.cache/-cacheable-mongo-entity/index.html"><span class="identifier">CacheableMongoEntity</span></a><span class="symbol">&lt;</span><a href="../../me.schlaubi.mongoutils.cache/-cacheable-mongo-entity/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">MongoEntity</span></a><span class="symbol">&lt;</span><a href="../../me.schlaubi.mongoutils.cache/-cacheable-mongo-entity/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

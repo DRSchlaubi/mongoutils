@@ -41,7 +41,7 @@ abstract class MongoEntity<T : MongoEntity<T>> {
      * @return a [CompletionStage] that completes when the request to the MongoDB instance was done
      */
     @Suppress("UNCHECKED_CAST") // Cast will succeed because this will always be T
-    fun insertAsync(mapper: Mapper<T>): CompletionStage<Unit> {
+    open fun insertAsync(mapper: Mapper<T>): CompletionStage<Unit> {
         this.mapper = mapper
         return mapper.insertAsync(this as T)
     }
@@ -53,7 +53,7 @@ abstract class MongoEntity<T : MongoEntity<T>> {
      * @return a [CompletionStage] that completes when the request to the MongoDB instance was done
      */
     @Suppress("UNCHECKED_CAST") // Cast will succeed because this will always be T!
-    fun insertAsync(mapper: Mapper<T>, insertOptions: InsertOneOptions): CompletionStage<Unit> {
+    open fun insertAsync(mapper: Mapper<T>, insertOptions: InsertOneOptions): CompletionStage<Unit> {
         this.mapper = mapper
         return mapper.insertAsync(this as T, insertOptions)
     }
@@ -65,7 +65,7 @@ abstract class MongoEntity<T : MongoEntity<T>> {
      * @return a [CompletionStage] that completes when the request to the MongoDB instance was done
      */
     @Suppress("UNCHECKED_CAST") // Cast will succeed because this will always be T
-    fun insertAsync(
+    open fun insertAsync(
         mapper: Mapper<T>,
         insertOptions: InsertOneOptions,
         clientSession: ClientSession
@@ -81,7 +81,7 @@ abstract class MongoEntity<T : MongoEntity<T>> {
      * @return a [CompletionStage] that completes when the request to the MongoDB instance was done
      */
     @Suppress("UNCHECKED_CAST") // Cast will succeed because this will always be T
-    fun insertAsync(mapper: Mapper<T>, clientSession: ClientSession): CompletionStage<Unit> {
+    open fun insertAsync(mapper: Mapper<T>, clientSession: ClientSession): CompletionStage<Unit> {
         this.mapper = mapper
         return mapper.insertAsync(this as T, clientSession)
     }
@@ -126,7 +126,7 @@ abstract class MongoEntity<T : MongoEntity<T>> {
      * @return a [CompletionStage] containing the  [UpdateResult]
      */
     @Suppress("UNCHECKED_CAST") // Cast will succeed because this will always be T
-    fun updateAsync(): CompletionStage<UpdateResult> {
+    open fun updateAsync(): CompletionStage<UpdateResult> {
         checkMapper()
         return mapper.saveAsync(this as T)
     }
@@ -137,7 +137,7 @@ abstract class MongoEntity<T : MongoEntity<T>> {
      * @return a [CompletionStage] containing the [UpdateResult]
      */
     @Suppress("UNCHECKED_CAST") // Cast will succeed because this will always be T
-    fun updateAsync(clientSession: ClientSession): CompletionStage<UpdateResult> {
+    open fun updateAsync(clientSession: ClientSession): CompletionStage<UpdateResult> {
         checkMapper()
         return mapper.saveAsync(this as T, clientSession)
     }
@@ -175,7 +175,7 @@ abstract class MongoEntity<T : MongoEntity<T>> {
      * @return a [CompletionStage] containing the [DeleteResult]
      */
     @Suppress("UNCHECKED_CAST") // Cast will succeed because this will always be T
-    fun deleteAsync(deleteOptions: DeleteOptions): CompletionStage<DeleteResult> {
+    open fun deleteAsync(deleteOptions: DeleteOptions): CompletionStage<DeleteResult> {
         checkMapper()
         return mapper.deleteAsync(this as T, deleteOptions)
     }
@@ -186,7 +186,7 @@ abstract class MongoEntity<T : MongoEntity<T>> {
      * @return a [CompletionStage] containing the [DeleteResult]
      */
     @Suppress("UNCHECKED_CAST") // Cast will succeed because this will always be T
-    fun deleteAsync(clientSession: ClientSession): CompletionStage<DeleteResult> {
+    open fun deleteAsync(clientSession: ClientSession): CompletionStage<DeleteResult> {
         checkMapper()
         return mapper.deleteAsync(this as T, clientSession)
     }
@@ -197,7 +197,7 @@ abstract class MongoEntity<T : MongoEntity<T>> {
      * @return a [CompletionStage] containing the [DeleteResult]
      */
     @Suppress("UNCHECKED_CAST") // Cast will succeed because this will always be T
-    fun deleteAsync(deleteOptions: DeleteOptions, clientSession: ClientSession): CompletionStage<DeleteResult> {
+    open fun deleteAsync(deleteOptions: DeleteOptions, clientSession: ClientSession): CompletionStage<DeleteResult> {
         checkMapper()
         return mapper.deleteAsync(this as T, deleteOptions, clientSession)
     }

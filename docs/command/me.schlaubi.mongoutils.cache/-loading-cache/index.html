@@ -1,0 +1,210 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LoadingCache - command</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">command</a>&nbsp;/&nbsp;<a href="../index.html">me.schlaubi.mongoutils.cache</a>&nbsp;/&nbsp;<a href="./index.html">LoadingCache</a><br/>
+<br/>
+<h1>LoadingCache</h1>
+<code><span class="keyword">interface </span><span class="identifier">LoadingCache</span><span class="symbol">&lt;</span><span class="identifier">K</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-cacheable-mongo-entity/index.html"><span class="identifier">CacheableMongoEntity</span></a><span class="symbol">&lt;</span><a href="index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-cache/index.html"><span class="identifier">Cache</span></a><span class="symbol">&lt;</span><a href="index.html#K"><span class="identifier">K</span></a><span class="symbol">,</span>&nbsp;<a href="index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span></code>
+<p>Cache which does automatically fetch entites that are not cached yet.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../-cache/index.html">Cache</a></p>
+<p><a href="../../me.schlaubi.mongoutils.providers/-accessor/index.html">me.schlaubi.mongoutils.providers.Accessor</a></p>
+</p>
+<p><strong>Author</strong><br/>
+Michael Rittmeister</p>
+<p><strong>Since</strong><br/>
+1.0</p>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-cache/entries.html">entries</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">entries</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/-mutable-entry/index.html"><span class="identifier">MutableEntry</span></a><span class="symbol">&lt;</span><a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">,</span>&nbsp;<a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>A <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html">MutableSet</a> containing all <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/-mutable-entry/index.html">MutableEntries</a> for the cached entities</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/keys.html">keys</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">keys</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">&gt;</span></code>
+<p>A <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html">MutableSet</a> of all they keys there are entites cached for.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/size.html">size</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">size</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Contains the amount of cached entities.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/values.html">values</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">values</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.LoadingCache$get(me.schlaubi.mongoutils.cache.LoadingCache.K)/key">key</span><span class="symbol">:</span>&nbsp;<a href="index.html#K"><span class="identifier">K</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#V"><span class="identifier">V</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-cache/clear.html">clear</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">clear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/contains.html">contains</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">contains</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$contains(me.schlaubi.mongoutils.cache.Cache.K)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/contains-key.html">containsKey</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">containsKey</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$containsKey(me.schlaubi.mongoutils.cache.Cache.K)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/get-all.html">getAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAll</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/invalidate.html">invalidate</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">invalidate</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$invalidate(me.schlaubi.mongoutils.cache.Cache.K)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">?</span></code>
+<p>Invalidates corresponding entity to the <a href="../-cache/invalidate.html#me.schlaubi.mongoutils.cache.Cache$invalidate(me.schlaubi.mongoutils.cache.Cache.K)/key">key</a> so it needs to be fetched again.
+If you use a <a href="./index.html">LoadingCache</a> the entity will get fetched automatically on the next call of <a href="../-cache/get.html">Cache.get</a>
+If you use a normal <a href="../-cache/index.html">Cache</a> you need to <a href="../-cache/set.html">set</a> the value of the entity again</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">invalidate</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$invalidate(me.schlaubi.mongoutils.cache.Cache.V)/value">value</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/invalidate-all.html">invalidateAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">invalidateAll</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Clears the whole cache so every entites needs to get fetched again</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/is-empty.html">isEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/iterator.html">iterator</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">iterator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterator/index.html"><span class="identifier">MutableIterator</span></a><span class="symbol">&lt;</span><a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the iterator of <a href="../-cache/get-all.html">Cache.getAll</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/minus-assign.html">minusAssign</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">minusAssign</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$minusAssign(me.schlaubi.mongoutils.cache.Cache.K)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/plus-assign.html">plusAssign</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">plusAssign</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$plusAssign(kotlin.Pair((me.schlaubi.mongoutils.cache.Cache.K, me.schlaubi.mongoutils.cache.Cache.V)))/pair">pair</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">,</span>&nbsp;<a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Puts the entity <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/first.html">value</a> into the cache corresponding to its <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/second.html">key</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/put.html">put</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$put(me.schlaubi.mongoutils.cache.Cache.K, me.schlaubi.mongoutils.cache.Cache.V)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$put(me.schlaubi.mongoutils.cache.Cache.K, me.schlaubi.mongoutils.cache.Cache.V)/value">value</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/remove.html">remove</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">remove</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$remove(me.schlaubi.mongoutils.cache.Cache.K)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">?</span></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">remove</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$remove(me.schlaubi.mongoutils.cache.Cache.K, me.schlaubi.mongoutils.cache.Cache.V)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$remove(me.schlaubi.mongoutils.cache.Cache.K, me.schlaubi.mongoutils.cache.Cache.V)/value">value</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/set.html">set</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$set(me.schlaubi.mongoutils.cache.Cache.K, me.schlaubi.mongoutils.cache.Cache.V)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$set(me.schlaubi.mongoutils.cache.Cache.K, me.schlaubi.mongoutils.cache.Cache.V)/value">value</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">?</span></code>
+<p>Puts the entity <a href="../-cache/set.html#me.schlaubi.mongoutils.cache.Cache$set(me.schlaubi.mongoutils.cache.Cache.K, me.schlaubi.mongoutils.cache.Cache.V)/value">value</a> into the cache corresponding to its <a href="../-cache/set.html#me.schlaubi.mongoutils.cache.Cache$set(me.schlaubi.mongoutils.cache.Cache.K, me.schlaubi.mongoutils.cache.Cache.V)/key">key</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/to-map.html">toMap</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">toMap</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="../-cache/index.html#K"><span class="identifier">K</span></a><span class="symbol">,</span>&nbsp;<a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cache/update.html">update</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">update</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$update(me.schlaubi.mongoutils.cache.Cache.V)/value">value</span><span class="symbol">:</span>&nbsp;<a href="../-cache/index.html#V"><span class="identifier">V</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-loading-snowflake-cache.html">LoadingSnowflakeCache</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LoadingSnowflakeCache</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils.defaults/-snowflake-mongo-entity/index.html"><span class="identifier">SnowflakeMongoEntity</span></a><span class="symbol">&lt;</span><a href="../-loading-snowflake-cache.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-snowflake-cache/index.html"><span class="identifier">SnowflakeCache</span></a><span class="symbol">&lt;</span><a href="../-loading-snowflake-cache.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">LoadingCache</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">,</span>&nbsp;<a href="../-loading-snowflake-cache.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span></code>
+<p>Modification of <a href="./index.html">LoadingCache</a> with some extra helpers for <a href="../../me.schlaubi.mongoutils.defaults/-snowflake-mongo-entity/index.html">SnowflakeMongoEntity</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

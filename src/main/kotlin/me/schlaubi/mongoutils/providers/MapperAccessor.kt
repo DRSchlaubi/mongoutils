@@ -4,7 +4,7 @@ import me.schlaubi.mongoutils.MongoEntity
 import me.schlaubi.mongoutils.internal.Mapper
 import java.util.concurrent.CompletionStage
 
-class MapperAccessor<T : MongoEntity<T>, K>(private val mapper: Mapper<T>) :
+class MapperAccessor<T : MongoEntity<T>, K : Any>(private val mapper: Mapper<T>) :
     CollectionAccessor<T, K>(mapper.collection, mapper.executor) {
 
     override fun getAsync(key: K): CompletionStage<T> = super.getAsync(key).thenApply { it.mapper = mapper; it }

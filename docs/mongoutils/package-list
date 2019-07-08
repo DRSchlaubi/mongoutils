@@ -1,0 +1,9 @@
+$dokka.format:html
+$dokka.linkExtension:html
+
+me.schlaubi.mongoutils
+me.schlaubi.mongoutils.annotations
+me.schlaubi.mongoutils.cache
+me.schlaubi.mongoutils.defaults
+me.schlaubi.mongoutils.internal
+me.schlaubi.mongoutils.providers

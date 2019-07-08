@@ -14,9 +14,9 @@ import java.util.concurrent.CompletionStage
 import java.util.concurrent.ExecutorService
 import java.util.function.Supplier
 
-open class CollectionAccessor<T : MongoEntity<T>, K>(
+open class CollectionAccessor<T : MongoEntity<T>, K : Any>(
     override val collection: MongoCollection<T>,
-    protected val executor: ExecutorService
+    private val executor: ExecutorService
 ) : Accessor<T, K> {
 
     override fun getAsync(key: K): CompletionStage<T> = future { collection.find(Filters.eq(key)).first() }

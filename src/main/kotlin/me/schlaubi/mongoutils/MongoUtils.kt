@@ -26,32 +26,32 @@ interface MongoUtils : Closeable {
      * Creates a new [Accessor] for entities of [clazz].
      * @return the [Accessor]
      */
-    fun <T : MongoEntity<T>, K> createAccessor(clazz: KClass<T>): Accessor<T, K>
+    fun <T : MongoEntity<T>, K : Any> createAccessor(clazz: KClass<T>): Accessor<T, K>
 
     /**
      * Creates a new [Accessor] for entities of [clazz].
      * @return the [Accessor]
      */
-    fun <T : MongoEntity<T>, K> createAccessor(clazz: Class<T>): Accessor<T, K> = createAccessor(clazz.kotlin)
+    fun <T : MongoEntity<T>, K : Any> createAccessor(clazz: Class<T>): Accessor<T, K> = createAccessor(clazz.kotlin)
 
     /**
      * Creates a new [Accessor] for entities of [clazz] and the additional [codecRegistry] using [org.bson.codecs.configuration.CodecRegistries.fromRegistries].
      * @return the [Accessor]
      */
-    fun <T : MongoEntity<T>, K> createAccessor(clazz: KClass<T>, codecRegistry: CodecRegistry): Accessor<T, K>
+    fun <T : MongoEntity<T>, K : Any> createAccessor(clazz: KClass<T>, codecRegistry: CodecRegistry): Accessor<T, K>
 
     /**
      * Creates a new [Accessor] for entities of [clazz] and the additional [codecRegistry] using [org.bson.codecs.configuration.CodecRegistries.fromRegistries].
      * @return the [Accessor]
      */
-    fun <T : MongoEntity<T>, K> createAccessor(clazz: Class<T>, codecRegistry: CodecRegistry): Accessor<T, K> =
+    fun <T : MongoEntity<T>, K : Any> createAccessor(clazz: Class<T>, codecRegistry: CodecRegistry): Accessor<T, K> =
         createAccessor(clazz.kotlin, codecRegistry)
 
     /**
      * Creates a new [Accessor] for entities of [clazz] using [pojoConventions] and the additional [codecRegistry] using [org.bson.codecs.configuration.CodecRegistries.fromRegistries].
      * @return the [Accessor]
      */
-    fun <T : MongoEntity<T>, K> createAccessor(
+    fun <T : MongoEntity<T>, K : Any> createAccessor(
         clazz: KClass<T>,
         codecRegistry: CodecRegistry,
         pojoConventions: List<Convention>?
@@ -61,7 +61,7 @@ interface MongoUtils : Closeable {
      * Creates a new [Accessor] for entities of [clazz] using [pojoConventions] and the additional [codecRegistry] using [org.bson.codecs.configuration.CodecRegistries.fromRegistries].
      * @return the [Accessor]
      */
-    fun <T : MongoEntity<T>, K> createAccessor(
+    fun <T : MongoEntity<T>, K : Any> createAccessor(
         clazz: Class<T>,
         codecRegistry: CodecRegistry,
         pojoConventions: List<Convention>?
@@ -71,7 +71,7 @@ interface MongoUtils : Closeable {
      * Creates a new [Accessor] for entities of [clazz] using [pojoConventions], the [executorService] and the additional [codecRegistry] using [org.bson.codecs.configuration.CodecRegistries.fromRegistries].
      * @return the [Accessor]
      */
-    fun <T : MongoEntity<T>, K> createAccessor(
+    fun <T : MongoEntity<T>, K : Any> createAccessor(
         clazz: KClass<T>,
         codecRegistry: CodecRegistry,
         pojoConventions: List<Convention>?,
@@ -82,7 +82,7 @@ interface MongoUtils : Closeable {
      * Creates a new [Accessor] for entities of [clazz] using [pojoConventions], the [executorService] and the additional [codecRegistry] using [org.bson.codecs.configuration.CodecRegistries.fromRegistries].
      * @return the [Accessor]
      */
-    fun <T : MongoEntity<T>, K> createAccessor(
+    fun <T : MongoEntity<T>, K : Any> createAccessor(
         clazz: Class<T>,
         codecRegistry: CodecRegistry,
         pojoConventions: List<Convention>?,

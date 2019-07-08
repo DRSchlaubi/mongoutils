@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Cache.invalidate - mongoutils</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mongoutils</a>&nbsp;/&nbsp;<a href="../index.html">me.schlaubi.mongoutils.cache</a>&nbsp;/&nbsp;<a href="index.html">Cache</a>&nbsp;/&nbsp;<a href="./invalidate.html">invalidate</a><br/>
+<br/>
+<h1>invalidate</h1>
+<a name="me.schlaubi.mongoutils.cache.Cache$invalidate(me.schlaubi.mongoutils.cache.Cache.K)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">invalidate</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$invalidate(me.schlaubi.mongoutils.cache.Cache.K)/key">key</span><span class="symbol">:</span>&nbsp;<a href="index.html#K"><span class="identifier">K</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#V"><span class="identifier">V</span></a><span class="symbol">?</span></code>
+<p>Invalidates corresponding entity to the <a href="invalidate.html#me.schlaubi.mongoutils.cache.Cache$invalidate(me.schlaubi.mongoutils.cache.Cache.K)/key">key</a> so it needs to be fetched again.
+If you use a <a href="../-loading-cache/index.html">LoadingCache</a> the entity will get fetched automatically on the next call of <a href="get.html">Cache.get</a>
+If you use a normal <a href="index.html">Cache</a> you need to <a href="set.html">set</a> the value of the entity again</p>
+<a name="me.schlaubi.mongoutils.cache.Cache$invalidate(me.schlaubi.mongoutils.cache.Cache.V)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">invalidate</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.cache.Cache$invalidate(me.schlaubi.mongoutils.cache.Cache.V)/value">value</span><span class="symbol">:</span>&nbsp;<a href="index.html#V"><span class="identifier">V</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#V"><span class="identifier">V</span></a><span class="symbol">?</span></code>
+</BODY>
+</HTML>

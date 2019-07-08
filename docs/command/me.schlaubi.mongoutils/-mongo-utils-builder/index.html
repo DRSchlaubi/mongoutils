@@ -1,0 +1,137 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MongoUtilsBuilder - command</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">command</a>&nbsp;/&nbsp;<a href="../index.html">me.schlaubi.mongoutils</a>&nbsp;/&nbsp;<a href="./index.html">MongoUtilsBuilder</a><br/>
+<br/>
+<h1>MongoUtilsBuilder</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MongoUtilsBuilder</span></code>
+<p>Builder for <code><a href="../-mongo-utils/index.html">MongoUtils</a></code></p>
+<p><strong>Author</strong><br/>
+Michael Rittmeister</p>
+<p><strong>Since</strong><br/>
+1.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MongoUtilsBuilder</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoUtilsBuilder$<init>(com.mongodb.client.MongoClient)/client">client</span><span class="symbol">:</span>&nbsp;<span class="identifier">MongoClient</span><span class="symbol">)</span></code>
+<p>Constructs a new <code><a href="./index.html">MongoUtilsBuilder</a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-codec-provider.html">addCodecProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addCodecProvider</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoUtilsBuilder$addCodecProvider(org.bson.codecs.configuration.CodecProvider)/codecProvider">codecProvider</span><span class="symbol">:</span>&nbsp;<span class="identifier">CodecProvider</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MongoUtilsBuilder</span></a></code>
+<p>Adds another <code><a href="#">CodecProvider</a></code> to <code><a href="#">MongoUtilsBuilder#codecRegistry</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-codec-registry.html">addCodecRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addCodecRegistry</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoUtilsBuilder$addCodecRegistry(org.bson.codecs.configuration.CodecRegistry)/codecRegistry">codecRegistry</span><span class="symbol">:</span>&nbsp;<span class="identifier">CodecRegistry</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MongoUtilsBuilder</span></a></code>
+<p>Adds another <code><a href="#">CodecRegistry</a></code> to <code><a href="#">MongoUtilsBuilder#codecRegistry</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-pojo-conventions.html">addPojoConventions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addPojoConventions</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoUtilsBuilder$addPojoConventions(kotlin.collections.MutableCollection((org.bson.codecs.pojo.Convention)))/pojoConventions">pojoConventions</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><span class="identifier">Convention</span><span class="symbol">!</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MongoUtilsBuilder</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addPojoConventions</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="me.schlaubi.mongoutils.MongoUtilsBuilder$addPojoConventions(kotlin.Array((org.bson.codecs.pojo.Convention)))/pojoConventions">pojoConventions</span><span class="symbol">:</span>&nbsp;<span class="identifier">Convention</span><span class="symbol">!</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MongoUtilsBuilder</span></a></code>
+<p>Adds a <code><a href="#">Convention</a></code> to <code><a href="#">MongoUtilsBuilder#pojoConventions</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="build.html">build</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">build</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-mongo-utils/index.html"><span class="identifier">MongoUtils</span></a></code>
+<p>Builds a new <code><a href="../-mongo-utils/index.html">MongoUtils</a></code> instance.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-client.html">getClient</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClient</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MongoClient</span></code>
+<p>Returns the MongoDB which is currently selected.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-codec-registry.html">getCodecRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCodecRegistry</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CodecRegistry</span></code>
+<p>Returns the CodecRegistry which gets passed into every <code><a href="#">com.mongodb.client.MongoCollection</a></code> used by <code><a href="../-mongo-utils/index.html">MongoUtils</a></code> using <code><a href="#">CodecRegistries#fromRegistries(CodecRegistry...)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-executor-service.html">getExecutorService</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExecutorService</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExecutorService</span></code>
+<p>Returns the <code><a href="#">ExecutorService</a></code> used by all MongoDB actions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-pojo-conventions.html">getPojoConventions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPojoConventions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">Convention</span><span class="symbol">!</span><span class="symbol">&gt;</span><span class="symbol">?</span></code>
+<p>Returns the <code><a href="#">Convention</a></code>s that are getting passed to every <code><a href="#">com.mongodb.client.MongoCollection</a></code> used by <code><a href="../-mongo-utils/index.html">MongoUtils</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-codec-registry.html">setCodecRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setCodecRegistry</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoUtilsBuilder$setCodecRegistry(org.bson.codecs.configuration.CodecRegistry)/codecRegistry">codecRegistry</span><span class="symbol">:</span>&nbsp;<span class="identifier">CodecRegistry</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MongoUtilsBuilder</span></a></code>
+<p>Sets the CodecRegistry which gets passed into every <code><a href="#">com.mongodb.client.MongoCollection</a></code> used by <code><a href="../-mongo-utils/index.html">MongoUtils</a></code> using <code><a href="#">CodecRegistries#fromRegistries(CodecRegistry...)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-executor-service.html">setExecutorService</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExecutorService</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoUtilsBuilder$setExecutorService(java.util.concurrent.ExecutorService)/executorService">executorService</span><span class="symbol">:</span>&nbsp;<span class="identifier">ExecutorService</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MongoUtilsBuilder</span></a></code>
+<p>Sets the <code><a href="#">ExecutorService</a></code> used by all MongoDB actions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-pojo-conventions.html">setPojoConventions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPojoConventions</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.MongoUtilsBuilder$setPojoConventions(kotlin.collections.MutableList((org.bson.codecs.pojo.Convention)))/pojoConventions">pojoConventions</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">Convention</span><span class="symbol">!</span><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MongoUtilsBuilder</span></a></code>
+<p>Sets the <code><a href="#">Convention</a></code>s that are getting passed to every <code><a href="#">com.mongodb.client.MongoCollection</a></code> used by <code><a href="../-mongo-utils/index.html">MongoUtils</a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

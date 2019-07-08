@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Mapper - command</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">command</a>&nbsp;/&nbsp;<a href="../index.html">me.schlaubi.mongoutils.internal</a>&nbsp;/&nbsp;<a href="./index.html">Mapper</a><br/>
+<br/>
+<h1>Mapper</h1>
+<code><span class="keyword">class </span><span class="identifier">Mapper</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../me.schlaubi.mongoutils/-mongo-entity/index.html"><span class="identifier">MongoEntity</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Closeable</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Mapper</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$<init>(com.mongodb.client.MongoCollection((me.schlaubi.mongoutils.internal.Mapper.T)), java.util.concurrent.ExecutorService, org.bson.codecs.pojo.ClassModel((me.schlaubi.mongoutils.internal.Mapper.T)))/collection">collection</span><span class="symbol">:</span>&nbsp;<span class="identifier">MongoCollection</span><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$<init>(com.mongodb.client.MongoCollection((me.schlaubi.mongoutils.internal.Mapper.T)), java.util.concurrent.ExecutorService, org.bson.codecs.pojo.ClassModel((me.schlaubi.mongoutils.internal.Mapper.T)))/executor">executor</span><span class="symbol">:</span>&nbsp;<span class="identifier">ExecutorService</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$<init>(com.mongodb.client.MongoCollection((me.schlaubi.mongoutils.internal.Mapper.T)), java.util.concurrent.ExecutorService, org.bson.codecs.pojo.ClassModel((me.schlaubi.mongoutils.internal.Mapper.T)))/model">model</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClassModel</span><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="close.html">close</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">close</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="delete-async.html">deleteAsync</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deleteAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$deleteAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/instance">instance</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$deleteAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/options">options</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeleteOptions</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$deleteAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.model.DeleteOptions, com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">DeleteResult</span><span class="symbol">!</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">deleteAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$deleteAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.model.DeleteOptions)/instance">instance</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$deleteAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.model.DeleteOptions)/options">options</span><span class="symbol">:</span>&nbsp;<span class="identifier">DeleteOptions</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">DeleteResult</span><span class="symbol">!</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">deleteAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$deleteAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.ClientSession)/instance">instance</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$deleteAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">DeleteResult</span><span class="symbol">!</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">deleteAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$deleteAsync(me.schlaubi.mongoutils.internal.Mapper.T)/instance">instance</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">DeleteResult</span><span class="symbol">!</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="insert-async.html">insertAsync</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">insertAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$insertAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/instance">instance</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$insertAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/options">options</span><span class="symbol">:</span>&nbsp;<span class="identifier">InsertOneOptions</span><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$insertAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.model.InsertOneOptions, com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">insertAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$insertAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.model.InsertOneOptions)/instance">instance</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$insertAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.model.InsertOneOptions)/options">options</span><span class="symbol">:</span>&nbsp;<span class="identifier">InsertOneOptions</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">insertAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$insertAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.ClientSession)/instance">instance</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$insertAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">insertAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$insertAsync(me.schlaubi.mongoutils.internal.Mapper.T)/instance">instance</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="save-async.html">saveAsync</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">saveAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$saveAsync(me.schlaubi.mongoutils.internal.Mapper.T)/instance">instance</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">UpdateResult</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">saveAsync</span><span class="symbol">(</span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$saveAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.ClientSession)/instance">instance</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">, </span><span class="identifier" id="me.schlaubi.mongoutils.internal.Mapper$saveAsync(me.schlaubi.mongoutils.internal.Mapper.T, com.mongodb.client.ClientSession)/clientSession">clientSession</span><span class="symbol">:</span>&nbsp;<span class="identifier">ClientSession</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CompletionStage</span><span class="symbol">&lt;</span><span class="identifier">UpdateResult</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MongoEntity.<init> - mongoutils</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">mongoutils</a>&nbsp;/&nbsp;<a href="../index.html">me.schlaubi.mongoutils</a>&nbsp;/&nbsp;<a href="index.html">MongoEntity</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="me.schlaubi.mongoutils.MongoEntity$&lt;init&gt;()"></a>
+<code><span class="identifier">MongoEntity</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Class which represents an entity saved oin a <a href="#">com.mongodb.client.MongoCollection</a>.
+<strong>Important:</strong> Entity classes must be annotated with <a href="../../me.schlaubi.mongoutils.annotations/-collection/index.html">me.schlaubi.mongoutils.annotations.Collection</a></p>
+<p>Example usage:</p>
+<pre><code class="lang-Java">@Collection(name = "Users", database = "test")
+public class User extends MongoEntity&lt;User&gt; {
+ // POJO object
+}```
+
+@property T the type of the entity
+
+@see me.schlaubi.mongoutils.annotations.Collection
+
+@author Michael Rittmeister
+@since 1.0</code></pre>
+</BODY>
+</HTML>
