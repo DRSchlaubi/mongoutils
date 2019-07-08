@@ -41,7 +41,7 @@ internal class CacheClassModel<K : Any, T : Any>(
         if (constructor.valueParameters.size != 1) {
             throw IllegalStateException("The @CacheConstructor is only allowed to have exactly one parameter!")
         }
-        if (constructor.valueParameters.first().type.jvmErasure != keyClazz) {
+        if (constructor.valueParameters.first().type.jvmErasure !=b keyClazz) {
             throw IllegalStateException("The @CacheConstructor's first parameter has to be the key!")
         }
         this.creator = constructor
